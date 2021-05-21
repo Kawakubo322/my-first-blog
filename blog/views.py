@@ -40,6 +40,6 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
     
 
-def poll(request):
+def poll(request, pk):
     return render(request, 'blog/poll.html', {})
 # Create your views here.
