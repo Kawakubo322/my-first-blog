@@ -41,5 +41,8 @@ def post_edit(request, pk):
     
 
 def poll(request, pk):
-    return render(request, 'blog/poll.html', {})
+    post = get_object_or_404(Post, pk=pk)
+    post.votes += 1
+    post.save()
+    return redirect('post_detail', pk=post.pk)
 # Create your views here.
